@@ -23,11 +23,15 @@ public class LinkNavigationTest extends BaseSetup{
             System.out.println("Cookie consent button not found or already accepted.");
         }
 
+        wait.until(ExpectedConditions.urlToBe("https://www.entrata.com/sign-in"));
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertEquals(currentUrl, "https://www.entrata.com/sign-in", "Sign in page url is incorrect");
+
         WebElement residentLoginLink = driver.findElement(By.linkText("Resident Login"));
         residentLoginLink.click();
 
         wait.until(ExpectedConditions.urlToBe("https://www.residentportal.com/"));
-        String currentUrl = driver.getCurrentUrl();
+        currentUrl = driver.getCurrentUrl();
         Assert.assertEquals(currentUrl, "https://www.residentportal.com/", "Resident login page url is incorrect");
     }
 }
