@@ -14,7 +14,7 @@ public class EntrataOverviewVideoTest extends BaseSetup{
     public void verifyVideoIframeVisibility() throws InterruptedException{
         driver.get("https://www.entrata.com/a#");
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         try {
             WebElement acceptCookiesButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("cookie-accept")));

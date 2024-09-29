@@ -1,6 +1,7 @@
 package com.truecodes;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,11 +10,10 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class CareersPageTest extends BaseSetup{
+public class LinkNavigationTest extends BaseSetup{
     @Test
-    public void navigateToCareersPage(){
-        driver.get("https://www.entrata.com");
-
+    public void verifySignInAndResidentLoginLinks(){
+        driver.get("https://www.entrata.com/sign-in");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 
         try {
@@ -23,7 +23,11 @@ public class CareersPageTest extends BaseSetup{
             System.out.println("Cookie consent button not found or already accepted.");
         }
 
-        driver.findElement(By.linkText("Careers")).click();//click on the careers link in the footer
-        Assert.assertTrue(driver.getCurrentUrl().contains("/careers"));//Assert the url contains careers section
+        WebElement residentLoginLink = driver.findElement(By.linkText("Resident Login"));
+        residentLoginLink.click();
+
+        wait.until(ExpectedConditions.urlToBe("https://www.residentportal.com/"));
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertEquals(currentUrl, "https://www.residentportal.com/", "Resident login page url is incorrect");
     }
 }
