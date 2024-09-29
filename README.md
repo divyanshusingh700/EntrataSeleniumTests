@@ -25,8 +25,6 @@ Make sure Maven is installed, then install the project dependencies by running:
 ### 3. Configuring SLF4J Logging
 SLF4J is used for logging purposes in this project. It requires a binding to a specific logging implementation.
 ### 4. Running the Tests
-## Command to Run Tests
-
     ```bash
     mvn verify
     ```
