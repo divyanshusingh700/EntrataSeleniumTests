@@ -8,7 +8,6 @@ public class BaseSetup {
     protected WebDriver driver;
     @BeforeClass
     public void setUp(){
-//        System.setProperty("webdriver.chrome.driver", )
         driver = new ChromeDriver();//setting up the new chrome driver
         driver.manage().window().maximize();//maximizing the chrome window
 

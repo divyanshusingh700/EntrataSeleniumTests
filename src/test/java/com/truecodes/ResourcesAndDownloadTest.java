@@ -13,8 +13,7 @@ import java.util.Set;
 public class ResourcesAndDownloadTest extends BaseSetup{
     @Test
     public void verifyResourcesAndDownloadLink(){
-        // Open the target webpage
-        driver.get("https://www.entrata.com/");
+        driver.get("https://www.entrata.com/");// Open the target webpage
 
         // Handle cookie acceptance consent if needed
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));

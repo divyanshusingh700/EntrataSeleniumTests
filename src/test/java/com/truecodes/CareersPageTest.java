@@ -12,10 +12,10 @@ import java.time.Duration;
 public class CareersPageTest extends BaseSetup{
     @Test
     public void navigateToCareersPage(){
-        driver.get("https://www.entrata.com");
+        driver.get("https://www.entrata.com");// Open the target webpage
 
+        // Handle cookie acceptance consent if needed
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-
         try {
             WebElement acceptCookiesButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("cookie-accept")));
             acceptCookiesButton.click();
