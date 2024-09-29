@@ -25,7 +25,7 @@ public class ResourcesAndDownloadTest extends BaseSetup{
         }
 
         // Locate the "See all Resources" link and click it using standard WebElement click method
-        WebElement seeAllResourcesLink = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/section[1]/div[12]/div[1]/a[1]"));
+        WebElement seeAllResourcesLink = driver.findElement(By.xpath("//a[@class='white-button center-button w-inline-block']"));
         seeAllResourcesLink.click();
 
         wait.until(ExpectedConditions.urlToBe("https://www.entrata.com/resources"));// Wait for the resources page to load and verify the URL
